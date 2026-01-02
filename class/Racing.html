@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="../css/iconfont.css">
     <link rel="shortcut icon" href="../404.html">
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
- 
-<link rel="stylesheet" href="../css/main.css">
 
 
    
@@ -75,14 +73,85 @@ gtag('config', 'AW-17827820993');
     </script> -->
 
 
+    <!-- Google GPT -->
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
+
     <script>
         window.googletag = window.googletag || { cmd: [] };
+
         googletag.cmd.push(function () {
-            googletag.defineSlot('/23330730517/skillgame24.com_d2',  [970, 280], 'div-gpt-ad-1766483398952-0').addService(googletag.pubads());
-            googletag.pubads().collapseEmptyDivs();
+
+            /* Responsive Size Mapping */
+            var mapping = googletag.sizeMapping()
+                .addSize([1024, 0], [[970, 250], [970, 90], [728, 90]])
+                .addSize([768, 0], [[728, 90], [300, 250]])
+                .addSize([0, 0], [[300, 250], [320, 480]])
+                .build();
+
+            function defineAd(path, id) {
+                googletag.defineSlot(
+                    path,
+                    [[970, 250], [970, 90], [728, 90], [300, 250], [320, 480]],
+                    id
+                ).defineSizeMapping(mapping)
+                    .addService(googletag.pubads());
+            }
+
+            /* Ad Slots */
+            defineAd('/23330730517/playnovapro.com_d1', 'div-gpt-ad-1766483201352-0');
+            defineAd('/23330730517/playnovapro.com_d2', 'div-gpt-ad-1766483229308-0');
+            defineAd('/23330730517/playnovapro.com_d3', 'div-gpt-ad-1766483259333-0');
+
+            /* Lazy Load */
+            googletag.pubads().enableLazyLoad({
+                fetchMarginPercent: 400,
+                renderMarginPercent: 200,
+                mobileScaling: 2
+            });
+
+            googletag.pubads().enableSingleRequest();
             googletag.enableServices();
         });
-    </script> 
+    </script>
+
+    <style>
+        /* ================= ADS CSS ================= */
+
+        .ad_box {
+            width: 100% !important;
+            text-align: center;
+            margin: 18px auto;
+        }
+
+        /* AD CONTAINER */
+        .ad-slot {
+            width: 100% !important;
+            margin: 0 auto;
+            min-height: 250px;
+            /* REQUIRED for lazy load */
+        }
+
+        /* Desktop */
+        @media (min-width:1024px) {
+            .ad-slot {
+                min-height: 90px;
+            }
+        }
+
+        /* Tablet */
+        @media (min-width:768px) and (max-width:1023px) {
+            .ad-slot {
+                min-height: 90px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width:767px) {
+            .ad-slot {
+                min-height: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -91,8 +160,15 @@ gtag('config', 'AW-17827820993');
 </noscript> -->
 <!-- End Google Tag Manager (noscript) -->
 
-
+    <!-- Mobile Menu Toggle Button -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
     
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
 
     <div class="main container">
 
@@ -201,18 +277,13 @@ gtag('config', 'AW-17827820993');
         <div class="section">
             <div class="s_box">
                 <h3 class="title grey" style="font-weight: 400">Racing games</h3>
+                <!-- div 1  -->
+<div class="ad_box">
+    <div id="div-gpt-ad-1766483201352-0" class="ad-slot"></div>
+    <p>Advertisement</p>
+</div>
                 <div class="gri">
-                    <div class="ad">
-                           <div style="width: 336px;height: 280px;">
-                                <!-- /23330730517/playnovapro.com_d1 -->
-                                <div id='div-gpt-ad-1766483201352-0' style='min-width: 336px; min-height: 280px;'>
-                                    <script>
-                                        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1766483201352-0'); });
-                                    </script>
-                                </div>
-                            </div>
-                        <p>Advertisement</p>
-                    </div>
+                   
 
                     <a href="../game/Earn_to_Die.html">
 <div class="img">
@@ -388,6 +459,13 @@ gtag('config', 'AW-17827820993');
             </div>
             <div class="s_box">
                 <h3 class="title grey">Popular Now</h3>
+                
+<!-- div 2  -->
+<div class="ad_box">
+    <div id="div-gpt-ad-1766483229308-0" class="ad-slot"></div>
+    <p>Advertisement</p>
+</div>
+
                 <div class="box_two">
                     <a href="../game/Five_Nights_at_Freddy_s_2.html" class="game_box">
 <div class="img">
@@ -473,6 +551,77 @@ gtag('config', 'AW-17827820993');
     <script>
         lazyload()
     </script>
+    <script>
+        // Mobile Menu Toggle
+        (function() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const aside = document.querySelector('.aside');
+            
+            if (mobileMenuToggle && menuOverlay && aside) {
+                function toggleMenu() {
+                    aside.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                    menuOverlay.classList.toggle('active');
+                }
+                
+                mobileMenuToggle.addEventListener('click', toggleMenu);
+                menuOverlay.addEventListener('click', toggleMenu);
+                
+                // Close menu when clicking on a link (optional)
+                const menuLinks = aside.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            toggleMenu();
+                        }
+                    });
+                });
+            }
+        })();
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const adIds = [
+            'div-gpt-ad-1766483201352-0', // D1
+            'div-gpt-ad-1766483229308-0', // D2
+            'div-gpt-ad-1766483259333-0'  // D3
+        ];
+
+        let isOverAd = false;
+
+        adIds.forEach(function (id) {
+            const adEl = document.getElementById(id);
+            if (!adEl) return;
+
+            adEl.addEventListener('mouseenter', function () {
+                isOverAd = true;
+            });
+
+            adEl.addEventListener('mouseleave', function () {
+                isOverAd = false;
+            });
+        });
+
+        window.addEventListener('blur', function () {
+            if (isOverAd) {
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({
+                    event: 'detail_ck'
+                });
+            }
+        });
+
+    });
+</script>
+<script>
+    googletag.cmd.push(function () {
+        googletag.display('div-gpt-ad-1766483201352-0');
+        googletag.display('div-gpt-ad-1766483229308-0');
+        googletag.display('div-gpt-ad-1766483259333-0');
+    });
+</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"2d0e241130bf4b05b6cb445ce454da0a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 

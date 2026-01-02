@@ -781,4 +781,554 @@ footer .container a:hover {
     color: #999;
 }
 
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    /* Mobile Menu Toggle Button */
+    .mobile-menu-toggle {
+        display: block;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 1001;
+        background: #fff;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        cursor: pointer;
+        padding: 8px;
+    }
+    
+    .mobile-menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #333;
+        margin: 4px 0;
+        transition: all 0.3s;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    /* Sidebar - Hidden by default on mobile */
+    .aside {
+        position: fixed;
+        left: -200px;
+        top: 0;
+        width: 200px;
+        height: 100vh;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .aside.active {
+        left: 0;
+    }
+    
+    /* Main content - Full width on mobile */
+    .section {
+        margin-left: 0;
+        width: 100%;
+        padding-top: 60px;
+    }
+    
+    /* Game cards - Responsive grid */
+    .box_one {
+        justify-content: space-between;
+        padding: 0 5px;
+    }
+    
+    .box_one a {
+        width: calc(50% - 10px);
+        height: auto;
+        margin: 10px 5px 0;
+        min-height: 180px;
+    }
+    
+    .box_one a:nth-child(6n) {
+        margin-right: 5px;
+    }
+    
+    .box_one a:nth-child(2n) {
+        margin-right: 0;
+    }
+    
+    .box_one a .img {
+        width: 100%;
+        height: auto;
+        padding-bottom: 100%;
+        position: relative;
+    }
+    
+    .box_one a .img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .box_one a .content_info {
+        width: 100%;
+        padding: 8px 5px;
+        height: auto;
+        min-height: 40px;
+    }
+    
+    .box_one a .content_info p {
+        font-size: 12px;
+        padding: 0 5px;
+    }
+    
+    /* Trending section - Full width cards on mobile */
+    .box_two {
+        flex-direction: column;
+        padding: 0 5px;
+    }
+    
+    .box_two a {
+        width: 100%;
+        height: auto;
+        min-height: 100px;
+        margin: 10px 0 0;
+        padding: 10px;
+    }
+    
+    .box_two a:nth-child(4n) {
+        margin-right: 0;
+    }
+    
+    .box_two a:nth-child(-n + 4) {
+        margin-top: 10px;
+    }
+    
+    .box_two a:first-child {
+        margin-top: 0;
+    }
+    
+    .box_two a .img {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+    }
+    
+    .box_two a .text {
+        width: calc(100% - 95px);
+        min-width: 0;
+    }
+    
+    .box_two a .text h3 {
+        font-size: 14px;
+    }
+    
+    /* Section titles */
+    .section .title {
+        font-size: 18px;
+        padding-left: 15px;
+        height: 50px;
+        line-height: 50px;
+        margin-bottom: 10px;
+    }
+    
+    /* Search box adjustments */
+    .aside .header .search_box {
+        width: calc(100% - 30px);
+        margin: 0 15px 15px;
+    }
+    
+    /* Logo adjustments */
+    .aside .header .logo {
+        margin: 60px 0 20px;
+    }
+    
+    /* Footer in sidebar - hide on mobile if needed */
+    .aside .footer {
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    /* Overlay when menu is open */
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+    
+    .menu-overlay.active {
+        display: block;
+    }
+}
+
+/* Tablet adjustments */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+    .aside {
+        width: 180px;
+    }
+    
+    .section {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+    
+    .box_one a {
+        width: calc(33.333% - 20px);
+    }
+    
+    .box_one a:nth-child(6n) {
+        margin-right: 20px;
+    }
+    
+    .box_one a:nth-child(3n) {
+        margin-right: 0;
+    }
+    
+    .box_two a {
+        width: calc(50% - 15px);
+    }
+    
+    .box_two a:nth-child(4n) {
+        margin-right: 20px;
+    }
+    
+    .box_two a:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+
+/* Hide mobile menu toggle on desktop */
+@media screen and (min-width: 769px) {
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+    
+    .menu-overlay {
+        display: none !important;
+    }
+}
+
+/* Mobile Responsive Styles for .gri grid */
+@media screen and (max-width: 768px) {
+    /* Grid layout for mobile - 2 columns */
+    .gri {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        padding: 15px 10px !important;
+    }
+    
+    .gri a {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 160px;
+    }
+    
+    .gri a .img {
+        width: 100% !important;
+        height: auto !important;
+        padding-bottom: 100%;
+        position: relative;
+    }
+    
+    .gri a .img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .gri a .content_info {
+        width: 100% !important;
+        padding: 8px 5px !important;
+        height: auto !important;
+        min-height: 40px;
+    }
+    
+    .gri a .content_info p {
+        font-size: 12px;
+        padding: 0 5px;
+    }
+    
+    /* Ad box adjustments */
+    .ad_box {
+        margin: 10px 0;
+        padding: 0 10px;
+    }
+    
+    .ad_box p {
+        font-size: 12px;
+        text-align: center;
+    }
+    
+    /* Section title adjustments */
+    .section .s_box .title.grey {
+        font-size: 16px;
+        padding-left: 15px;
+        height: 45px;
+        line-height: 45px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Tablet adjustments for .gri */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .gri {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 12px !important;
+    }
+    
+    .gri a {
+        width: 100% !important;
+    }
+}
+
+/* Mobile Responsive Styles for Game Detail Pages */
+@media screen and (max-width: 768px) {
+    /* Navigation breadcrumb */
+    .navigation {
+        font-size: 12px;
+        padding: 15px 10px;
+        height: auto;
+        min-height: 40px;
+        line-height: 1.5;
+        word-wrap: break-word;
+    }
+    
+    /* Game box container */
+    .game_box {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .game_box .game {
+        width: 100% !important;
+        margin-right: 0;
+    }
+    
+    /* Game header section */
+    .game_box .game .mm_t {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .game_box .game .mm_t .img {
+        width: 120px;
+        height: 120px;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .game_box .game .mm_t .ml_t {
+        width: 100% !important;
+        height: auto;
+    }
+    
+    .game_box .game .mm_t .ml_t h3 {
+        width: 100% !important;
+        font-size: 18px;
+        white-space: normal;
+        word-wrap: break-word;
+        text-align: center;
+        margin: 10px 0;
+    }
+    
+    .game_box .game .mm_t .ml_t .g_a_link {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+    
+    .game_box .game .mm_t .ml_t .g_a_link .buttons {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .game_box .game .mm_t .ml_t .g_a_link .rating-bar {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Game details section */
+    .game_box .game .game_details {
+        margin-top: 20px;
+    }
+    
+    .game_box .game .game_details .buttons {
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 0;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .game_box .game .game_details .buttons span {
+        width: auto;
+        min-width: 100px;
+        margin: 5px;
+        padding: 0 15px;
+    }
+    
+    .game_box .game .game_details .details_box {
+        padding: 15px;
+        margin-top: 15px;
+    }
+    
+    .game_box .game .game_details .details_box ul li {
+        flex-direction: column;
+        width: 100% !important;
+        height: auto;
+        padding-left: 0 !important;
+        margin-bottom: 15px;
+        align-items: flex-start;
+    }
+    
+    .game_box .game .game_details .details_box ul li h3 {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .game_box .game .game_details .details_box ul li p {
+        width: 100% !important;
+        padding-left: 0 !important;
+        white-space: normal;
+        word-wrap: break-word;
+        height: auto;
+    }
+    
+    /* Ad box in game_box */
+    .game_box .ad_box {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .game_box .ad_box .ad {
+        width: 100%;
+    }
+    
+    .game_box .ad_box .ad > div {
+        width: 100% !important;
+        max-width: 100%;
+    }
+    
+    .game_box .ad_box .ad > div > div {
+        min-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    /* Screenshot carousel */
+    .seeding_box {
+        padding: 10px;
+    }
+    
+    .seeding_box .seeding {
+        width: 100% !important;
+        height: auto;
+        max-width: 100%;
+    }
+    
+    .seeding_box .seeding img {
+        height: auto;
+        max-height: 200px;
+        width: 100%;
+        object-fit: contain;
+    }
+    
+    .seeding .swiper-wrapper .swiper-slide {
+        width: auto;
+        height: auto;
+        max-height: 200px;
+    }
+    
+    /* Description section */
+    .box_three {
+        padding: 10px;
+    }
+    
+    .box_three h3 {
+        font-size: 14px;
+    }
+    
+    .box_three .dec p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+    
+    /* Get app box */
+    .get_app_box {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 10px;
+    }
+    
+    .get_app_box a {
+        width: 100%;
+        max-width: 300px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .get_app_box a:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* Prevent content overflow */
+    .public_box {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    /* Ensure all text wraps properly */
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Fix any fixed width elements */
+    .game_box .game .mm_t .ml_t .g_a_link .rating-bar .article {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Navigation text wrap */
+    .navigation a,
+    .navigation span {
+        word-break: break-word;
+        display: inline;
+    }
+}
 
